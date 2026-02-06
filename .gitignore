@@ -1,8 +1,0 @@
-.idea
-dist/
-node_modules/
-.vscode/
-.DS_Store
-
-src/scss/components.scss
-TODO
