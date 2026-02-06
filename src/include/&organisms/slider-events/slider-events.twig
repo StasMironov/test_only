@@ -1,0 +1,15 @@
+<div class="slider-events" data-slider-events-wrap>
+		<span class="slider-events__category" data-slider-category></span>
+		<div class="swiper-container" data-slider-events>
+			<div class="swiper-wrapper">
+			</div>
+		</div>
+		<div class="slider-events__nav">
+			{% view '@nav-arrows' with {
+				nav_arrows: {
+					theme: 'small'
+				}
+			} %}
+		</div>
+		<div class="slider-events__bullets" data-slider-events-fraction></div>
+</div>

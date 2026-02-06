@@ -1,0 +1,85 @@
+@mixin line-animate-in($color: currentColor) {
+	background-size: 0 1px;
+	background-position: 100% 100%;
+	background-image: linear-gradient($color, $color);
+	background-repeat: no-repeat;
+	text-decoration: none !important;
+
+	transition-property: background-size, color;
+	transition-duration: $timing;
+	transition-timing-function: $easing;
+	will-change: background-size;
+
+	@include touchLessHover {
+		background-position: 0 100%;
+		background-size: 100% 1px;
+	}
+}
+
+@mixin line-animate-out($color: currentColor) {
+	background-size: 100% 1px;
+	background-position: 0 100%;
+	background-image: linear-gradient($color, $color);
+	background-repeat: no-repeat;
+	text-decoration: none !important;
+
+	transition-property: background-size, color;
+	transition-duration: $timing;
+	transition-timing-function: $easing;
+	will-change: background-size;
+
+	@include touchLessHover {
+		background-position: 100% 100%;
+		background-size: 0 1px;
+	}
+}
+
+@mixin last-row($count) { // Для элементов в последнем ряду, $count - максимальное количество элементов в ряду
+  &:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}),
+  &:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) ~ & {
+    @content;
+  }
+}
+
+@mixin last-row-with-item($count, $item) {
+	&:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}),
+	&:nth-child(#{$count}n+1):nth-last-child(-n+#{$count}) ~ #{$item} {
+		@content;
+	}
+}
+
+@mixin touchLessHover() {
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin title-offset {
+	&:nth-child(1) {
+		padding-left: 50.3%;
+		padding-right: 8%;
+
+		@include media-breakpoint-down(md) {
+			padding-left: 0;
+		}
+
+		// @include media-breakpoint-down(sm) {
+		// 	padding-left: 0;
+		// }
+	}
+
+	&:nth-child(2) {
+		padding-right: 6%;
+
+		@include media-breakpoint-down(md) {
+			//padding-left: calc(#{rem(100)} * 2);
+			padding: 0;
+		}
+
+		// @include media-breakpoint-down(sm) {
+		// 	padding-left: 0;
+		// }
+	}
+}

@@ -1,0 +1,22 @@
+<div class="nav-arrows{% if nav_arrows.theme %} nav-arrows--{{ nav_arrows.theme }}{% endif %}"{% if nav_arrows.attr %} {{ nav_arrows.attr }}{% endif %}>
+	<div class="nav-arrows__buttons">
+		<button type="button" class="nav-arrows__button prev" data-nav-arrow-prev
+				title="{{ title.prev ?: 'Назад' }}" aria-label="{{ title.prev ?: 'Назад' }}">
+			{% view '@icon' with {
+				icon: {
+					name: "14/arrow-left",
+					size: "fit"
+				}
+			} %}
+		</button>
+		<button type="button" class="nav-arrows__button next" data-nav-arrow-next
+				title="{{ title.next ?: 'Вперед' }}" aria-label="{{ title.next ?: 'Вперед' }}">
+			{% view '@icon' with {
+				icon: {
+					name: "14/arrow-right",
+					size: "fit"
+				}
+			} %}
+		</button>
+	</div>
+</div>

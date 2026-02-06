@@ -1,0 +1,45 @@
+<div class="slider-history container" data-slider-history-wrap>
+	<div class="slider-history__inner">
+		<h2 class="slider-history__title h2">
+			{% for word in slider.title %}
+				<span>{{word}}</span>
+			{% endfor %}
+		</h2>
+		<div class="slider-history__period swiper-container" data-slider-history>
+			<div class="swiper-wrapper">
+				{% for slide in slider.items %}
+					<div class="swiper-slide"
+						data-events="{{ slide.events | json_encode | e('html_attr') }}"
+						data-category="{{ slide.category }}"
+					>
+						<div class="slider-history__item">
+							{% for factoid in slide.factoids %}
+								{% view '^factoid' with {
+									factoid: factoid
+								} %}
+							{% endfor %}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="slider-history__cover">
+			{% if slider.items|length > 1 %}
+				<div class="slider-history__navigation">
+					<div class="slider-history__pag" data-fade-in-up>
+						{% view '@nav-pag' with {
+							slider: slider
+						} %}
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+	<div class="slider-history__nav" data-fade-in-up>
+		<div class="slider-history__fraction" data-slider-history-fraction></div>
+		{% view '@nav-arrows' %}
+	</div>
+	<div class="slider-history__events">
+		{% view '&slider-events' %}
+	</div>
+</div>

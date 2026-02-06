@@ -1,0 +1,26 @@
+// Color system:
+// 'colorName': 'color'
+
+@each $colorName, $colorValue in $colors {
+  .bg-#{$colorName} {
+    background-color: $colorValue !important;
+  }
+  .bg-#{$colorName}-darken {
+    background-color: $colorValue !important;
+  }
+  .bg-#{$colorName}-lighten {
+    background-color: $colorValue !important;
+  }
+
+  .color-#{$colorName} {
+    color: $colorValue !important;
+  }
+  .color-#{$colorName}-darken {
+    color: $colorValue !important;
+  }
+  .color-#{$colorName}-lighten {
+    color: $colorValue !important;
+  }
+}
+
+

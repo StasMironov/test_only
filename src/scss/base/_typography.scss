@@ -1,0 +1,83 @@
+html {
+	font-family: $ff-base;
+	font-weight: 500;
+	font-style: normal;
+}
+
+body {
+	@include text-body;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+h1, .h1 {
+	@include h1;
+}
+
+h2, .h2 {
+	@include h2;
+}
+
+h3, .h3 {
+	@include h3;
+}
+
+h4, .h4 {
+	@include h4;
+}
+
+h5, .h5 {
+	@include h4;
+}
+
+h6, .h6 {
+	@include h4;
+}
+
+.text-body {
+	@include text-body;
+}
+
+.text-small {
+	@include text-small;
+}
+
+.factor-text {
+	@include factor-text;
+}
+
+.list {
+	padding-left: rem(24);
+	margin-top: rem(16);
+	
+	 li{
+		position: relative;
+		margin-bottom: rem(14.5);	
+	
+		&::before{
+			position: absolute;
+			top: rem(14);
+			left: rem(-16);
+			position: absolute;
+			top: 50%;
+			left: -1.5rem;
+			display: block;
+			width: 8px;
+			height: 8px;
+			background-color: #00d372;
+			border-radius: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			content: ''
+		}
+	}
+}

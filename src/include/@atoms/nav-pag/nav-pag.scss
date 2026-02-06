@@ -1,0 +1,25 @@
+.nav-pag {
+	position: relative;
+	max-width: rem(200);
+	overflow: hidden;
+
+	@include media-breakpoint-down(sm) {
+		max-width: rem(105);
+	}
+
+	.swiper-slide {
+		width: 100px;
+		color: rgba($color-black, 0.4);
+		cursor: pointer;
+		@include defaultTransition(color);
+
+		@include touchLessHover {
+			color: rgba($color-black, 1);
+		}
+	}
+
+	.swiper-slide-thumb-active {
+		color: rgba($color-black, 1);
+		cursor: initial;
+	}
+}

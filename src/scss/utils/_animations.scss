@@ -1,0 +1,51 @@
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes spinAroundReverse {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(-359deg);
+	}
+}
+
+$sal-animation-duration: 1s !default;
+$sal-animation-delay: 0.2s !default;
+$sal-slide-offset-Y: 50px !default;
+
+@mixin fade-in-up {
+	transition-duration: 0s;
+	transition-delay: 0s;
+	transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+	transition-property: opacity, transform;
+	opacity: 0;
+	transform: translateY($sal-slide-offset-Y);
+
+	&.animate {
+		opacity: 1;
+		transform: none;
+		transition-duration: $sal-animation-duration;
+		transition-delay: $sal-animation-delay;
+	}
+	//@at-root .animate-disabled & {
+	//	opacity: 1;
+	//	transform: none;
+	//}
+}
+
+
+// User text
+.user-text[data-animate-user-text] {
+	>h1, >h2, >h3, >h4, >h5, >h6, >p, >ul, >ol, >blockquote, >div, >img {
+		opacity: 0;
+
+		@include fade-in-up;
+	}
+}

@@ -1,0 +1,19 @@
+{% extends "layouts::_page.twig" %}
+
+{% block entrance %}
+    <div class="layout-sidebar">
+        {% block layout_before %}{% endblock %}
+        <div class="layout-sidebar__container container">
+            <aside class="layout-sidebar__aside">
+                {% block layout_aside %}{% endblock %}
+            </aside>
+            <div class="layout-sidebar__content">
+                {% block layout_content %}{% endblock %}
+            </div>
+        </div>
+        <div class="layout-sidebar__sections">
+            {% block layout_sections %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
+

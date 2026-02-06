@@ -1,0 +1,209 @@
+// Базовые опции inputoв
+@mixin base-input {
+	$b: &;
+	display: block;
+	width: 100%;
+	height: rem(60);
+	padding: 0;
+	color: rgba($color-black, 0.4);
+	font-size: rem(24);
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid rgba($color-black, 0.2);
+	border-radius: 0;
+	@include defaultTransition(border-color, color);
+
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0px 1000px transparent inset;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+	&:-webkit-textfield-decoration-container {
+		display: none; /* or whatever styling you want */
+	}
+
+	@include media-breakpoint-down(sm) {
+		height: rem(55);
+		font-size: rem(20);
+	}
+
+	@include defaultTransition(border-color);
+
+	&:focus {
+		outline: none;
+	}
+
+	@include touchLessHover {
+		&:not(:disabled) {
+			border-color: rgba($color-black, 1);
+		}
+	}
+
+	&:focus {
+		-webkit-text-fill-color: rgba($color-black, 1);
+	}
+
+	&::placeholder {
+		opacity: 1 !important;
+	}
+
+	&:focus::placeholder {
+		color: transparent;
+		opacity: 0 !important;
+	}
+
+	&:disabled {
+		border-color: transparent;
+		cursor: not-allowed;
+		opacity: 0.65;
+	}
+
+	&::-webkit-input-placeholder,
+	&:-moz-placeholder,
+	&::-ms-input-placeholder,
+	&::placeholder {
+		color: rgba($color-black, 0.4);
+		@include defaultTransition(opacity, color);
+	}
+
+	&:-ms-input-placeholder {
+		color: rgba($color-black, 0.4);
+		opacity: 1;
+		@include defaultTransition(opacity);
+	}
+
+	// Отдельно для mozilla
+	&::-moz-placeholder {
+		color: rgba($color-black, 0.4);
+		opacity: 1;
+		@include defaultTransition(opacity);
+	}
+
+	&::-ms-clear {
+		display: none;
+	}
+
+	&--white {
+		color: rgba($color-white, 0.6);
+		border-color: rgba($color-white, 0.6);
+		caret-color: $color-white;
+		-webkit-text-fill-color: rgba($color-white, 1);
+		@include defaultTransition(color);
+
+		&:disabled {
+			background-color: rgba(#292929, 0.5);
+		}
+		@include touchLessHover {
+			&:not(:disabled) {
+				color: rgba($color-white, 1);
+				border-color: rgba($color-white, 1);
+				-webkit-text-fill-color: rgba($color-white, 1);
+			}
+		}
+
+		&:focus {
+			-webkit-text-fill-color: rgba($color-white, 1);
+		}
+
+		&::placeholder {
+			color: rgba($color-white, 0.6);
+		}
+
+		//Отдельно для ie - иначе не будет применен placeholder
+		&:-ms-input-placeholder {
+			color: rgba($color-white, 0.6);
+			@include defaultTransition(opacity);
+		}
+
+		// Отдельно для mozilla
+		&::-moz-placeholder {
+			color: rgba($color-white, 0.6);
+			@include defaultTransition(opacity);
+		}
+	}
+
+	&--white-2 {
+		color: rgba($color-white, 1);
+
+		&:focus {
+			color: rgba($color-white, 1);
+		}
+
+		&::placeholder {
+			color: rgba($color-white, 0.4);
+			opacity: 1;
+		}
+
+		@include touchLessHover {
+			color: rgba($color-white, 1);
+
+			&:not(:disabled) {
+				color: rgba($color-white, 1);
+				border-color: rgba($color-white, 1);
+				-webkit-text-fill-color: rgba($color-white, 1) !important;
+			}
+
+			&::placeholder {
+				color: rgba($color-white, 0.4);
+				opacity: 1;
+			}
+		}
+
+		&:focus {
+			-webkit-text-fill-color: rgba($color-white, 1) !important;
+		}
+
+		.input-search__icon {
+			color: $color-white;
+		}
+	}
+
+	&.parsley-error {
+		border-color: $color-red !important;
+	}
+
+	&::-webkit-input-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:-moz-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:-ms-input-placeholder {
+		opacity: 1;
+		transition: opacity 0.3s ease;
+	}
+	&:focus::-webkit-input-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus::-moz-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus:-moz-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+	&:focus:-ms-input-placeholder {
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+// 	&:-webkit-autofill,
+// &:-webkit-autofill:hover,
+// &:-webkit-autofill:focus,
+// &:-webkit-autofill:active,
+// &:-internal-autofill-selected {
+// 	-webkit-box-shadow: 0 0 0 30px white inset !important;
+//     transition-property: background-color, color;
+//     transition-delay: 10000s, 10000s;
+// }
+}

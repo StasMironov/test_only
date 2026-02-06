@@ -1,0 +1,15 @@
+.is-relative {
+  position: relative;
+}
+
+.is-static {
+  position: static;
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}

@@ -1,0 +1,50 @@
+// .layout-sidebar {
+// 	overflow: hidden;
+
+// 	&__aside {
+// 		padding-top: rem(18);
+
+// 		@include media-breakpoint-up(lg) {
+// 			position: relative;
+// 			display: block;
+// 			flex: 0 0 auto;
+// 			width: rem($aside_width);
+// 		}
+
+// 		@include media-breakpoint-down(md) {
+// 			margin-bottom: rem(24);
+// 			padding-top: 0;
+// 		}
+
+// 		@include media-breakpoint-down(sm) {
+// 			margin-bottom: rem(18);
+// 		}
+// 	}
+
+// 	&__content {
+// 		@include media-breakpoint-up(lg) {
+// 			flex: 1 1 auto;
+// 			width: calc(100% - #{rem($aside_width)});
+// 		}
+// 	}
+
+// 	&__container {
+// 		display: block;
+// 		padding-top: rem(207);
+// 		padding-bottom: rem(120);
+
+// 		@include media-breakpoint-up(lg) {
+// 			display: flex;
+// 			flex-wrap: nowrap;
+// 		}
+
+// 		@include media-breakpoint-down(md) {
+// 			padding-top: rem(168);
+// 		}
+
+// 		@include media-breakpoint-down(sm) {
+// 			padding-top: rem(121);
+// 			padding-bottom: rem(66);
+// 		}
+// 	}
+// }
