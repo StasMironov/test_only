@@ -42,7 +42,7 @@ module.exports = {
     },
     js: {
         srcExt: 'js',
-        main: './src/js/*.js',
+        main: './src/js/*.{js,ts}',
         src: [
             './src/js/**/*.js',
             './src/include/**/*.js',

@@ -32,6 +32,7 @@
 		color: $color-black;
 		border-color: rgba($color-black, 0.5);
 		pointer-events: all;
+		background-color: transparent;
 
 		@include media-breakpoint-up(md) {
 			width: rem(50);
@@ -57,9 +58,10 @@
 			width: rem(40);
 			height: rem(40);
 			border: none;
-			filter: drop-shadow(0 0 rem(4) rgba($color-blue, 0.5));
+			filter: drop-shadow(0 0 rem(4) rgba($color-blue, 0.2));
 			background-color: white;
 			color: $color-blue;
+			font-size: rem(12);
 
 			&:disabled,
 			&--disabled {

@@ -32,6 +32,7 @@ body {
 	font-family: $ff-base;
 	line-height: 1.15;
 	text-align: left;
+	background-color: $color-gray-light;
 }
 
 [tabindex='-1']:focus:not(:focus-visible) {

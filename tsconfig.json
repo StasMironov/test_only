@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "checkJs": false,           // можно включить позже
+      "jsx": "react",             // если используете React, иначе уберите
+      "sourceMap": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "strict": true,             // можно начать с false и постепенно ужесточать
+      "noEmit": true,             // важно — Babel будет делать emit, а не tsc
+      "baseUrl": "src",
+      "paths": {
+        "@/*": ["*"]
+      }
+    },
+    "include": [
+      "src/**/*"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist"
+    ]
+  }

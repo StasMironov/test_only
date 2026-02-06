@@ -121,21 +121,22 @@ const config = {
 				loader: 'vue-loader',
 			},
 			{
-				test: /\.js$/,
+				test: /\.(js|ts|tsx)$/,
 				exclude: /(node_modules\/(?!(swiper|dom7|micromodal|sticky-sidebar)\/).*|bower_components)/,
 				use: [
-					{
-						loader: 'babel-loader',
-						options: {
-							presets: ['@babel/preset-env'],
-							plugins: [
-								require('@babel/plugin-proposal-object-rest-spread'),
-								require('@babel/plugin-transform-object-assign'),
-							],
-						},
+				  {
+					loader: 'babel-loader',
+					options: {
+					  presets: ['@babel/preset-env', '@babel/preset-typescript'],
+					  plugins: [
+						require('@babel/plugin-proposal-object-rest-spread'),
+						require('@babel/plugin-transform-object-assign'),
+					  ],
+					  cacheDirectory: true,
 					},
+				  },
 				],
-			},
+			  },
 			{
 				test: /\.s[ac]ss$/,
 				exclude: /node_modules/,
@@ -229,6 +230,7 @@ const config = {
 		alias: {
 			'~svg': path.resolve(__dirname, './src/img'),
 		},
+		extensions: ['.ts', '.tsx', '.js', '.jsx', '.vue', '.json']
 	},
 
 	plugins: [
