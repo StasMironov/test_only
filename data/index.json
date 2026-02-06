@@ -6,24 +6,6 @@
 				"link": "main",
 				"name": "Главная"
 			}
-		],
-		"Служебные страницы": [
-			{
-				"link": "typography",
-				"name": "Типографика"
-			},
-			{
-				"link": "atoms",
-				"name": "Атомы"
-			},
-			{
-				"link": "molecules",
-				"name": "Молекулы"
-			},
-			{
-				"link": "organisms",
-				"name": "Организмы"
-			}
 		]
 	}
 }
